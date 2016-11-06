@@ -7,71 +7,77 @@
     </div>
 
     <quasar-tabs slot="navigation">
-      <quasar-tab route="/juliet">
+      <quasar-tab @click="selectedList = juliet">
           J
       </quasar-tab>
 
-      <quasar-tab route="/noVowels">
+      <quasar-tab @click="selectedList = noVowels">
           No Vwls
       </quasar-tab>
 
-      <quasar-tab route="/qNoU">
+      <quasar-tab @click="selectedList = qNoU">
           qNoU
       </quasar-tab>
 
-      <quasar-tab route="/quebec">
+      <quasar-tab @click="selectedList = quebec">
           Q
       </quasar-tab>
 
-      <quasar-tab route="/threeLetters">
+      <quasar-tab @click="selectedList = threeLetters">
           3 Ltrs
       </quasar-tab>
 
-      <quasar-tab route="/twoAlphas">
+      <quasar-tab @click="selectedList = twoAlphas">
           AA
       </quasar-tab>
 
-      <quasar-tab route="/twoEchos">
+      <quasar-tab @click="selectedList = twoEchos">
           EE
       </quasar-tab>
 
-      <quasar-tab route="/twoIndias">
+      <quasar-tab @click="selectedList = twoIndias">
           II
       </quasar-tab>
 
-      <quasar-tab route="/twoLetters">
+      <quasar-tab @click="selectedList = twoLetters">
           2 Ltrs
       </quasar-tab>
 
-      <quasar-tab route="/twoOctobers">
+      <quasar-tab @click="selectedList = twoOctobers">
           OO
       </quasar-tab>
 
-      <quasar-tab route="/twoUnicorns">
+      <quasar-tab @click="selectedList = twoUnicorns">
           UU
       </quasar-tab>
 
-      <quasar-tab route="/twoYankees">
+      <quasar-tab @click="selectedList = twoYankees">
           YY
       </quasar-tab>
 
-      <quasar-tab route="/xray">
+      <quasar-tab @click="selectedList = xray">
           X
       </quasar-tab>
 
-      <quasar-tab route="/zebra">
+      <quasar-tab @click="selectedList = zebra">
           Z
       </quasar-tab>
     </quasar-tabs>
     <!-- <div class="layout-view"></div> -->
-    <router-view class="layout-view" ></router-view>
+    <word-list :selectedList="selectedList"></word-list>
   </quasar-layout>
 </template>
 
 <script>
+import wordList from './wordlist'
+
 export default {
+  components: {
+    wordList
+  },
   data () {
     return {
+      selectedList: ''
     }
   }
 }
