@@ -9,13 +9,15 @@
 
   <!-- this shows the definition of the word when clicked on -->
   <quasar-modal
+    id="defPage"
     ref="basicModal"
-    class="minimize"
-    :content-css="{minWidth: '90vw', minHeight: '50vh'}"
+    class="maximize"
+    :content-css="{backgroundColor: '#F9E3AB'}"
   >
-    <h3 class="text-center">{{returnedWord}} Definition</h3>
+    <h4 class="text-center"><b>{{returnedWord}}</b> Definition</h4>
     <p class="defText">{{definition}}</p>
-    <button class="primary round" @click="$refs.basicModal.close()">Close</button>
+    <button class="round closeBtn" @click="$refs.basicModal.close()">Close</button>
+    
   </quasar-modal>
 </div>
 </template>
@@ -80,5 +82,13 @@ export default {
 </script>
 
 <style>
+  .defPage {
+    background-color: #F9E3AB;
+  }
 
+  .closeBtn {
+    margin-left: 8rem;
+    background-color: #632612;
+    color: lightblue;
+  }
 </style>

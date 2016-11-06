@@ -12,19 +12,23 @@
       </quasar-tab>
 
       <quasar-tab route="/noVowels">
-          No Vwls
+          No Vowels
       </quasar-tab>
 
       <quasar-tab route="/qNoU">
-          qNoU
+          Q no U
       </quasar-tab>
 
       <quasar-tab route="/quebec">
           Q
       </quasar-tab>
 
+      <quasar-tab route="/twoLetters">
+          2 Letters
+      </quasar-tab>
+
       <quasar-tab route="/threeLetters">
-          3 Ltrs
+          3 Letters
       </quasar-tab>
 
       <quasar-tab route="/twoAlphas">
@@ -37,10 +41,6 @@
 
       <quasar-tab route="/twoIndias">
           II
-      </quasar-tab>
-
-      <quasar-tab route="/twoLetters">
-          2 Ltrs
       </quasar-tab>
 
       <quasar-tab route="/twoOctobers">
@@ -79,28 +79,28 @@ export default {
 
 <style>
 
-li {
-  list-style: none;
-}
+  li {
+    list-style: none;
+  }
 
-.instruction {
-  text-align: center;
-  font-style: italic;
-}
+  .instruction {
+    text-align: center;
+    font-style: italic;
+  }
 
-.wordStyle {
-  width: 66%;
-  margin-bottom: .5rem;
-  padding: .25rem;
-}
+  .wordStyle {
+    width: 66%;
+    margin-bottom: .5rem;
+    padding: .25rem;
+  }
 
-.defText {
-  padding: 1rem;
-}
+  .defText {
+    padding: 1.5rem;
+  }
 
-#defPage {
-  background-color: #F9E3AB;
-  color: #632612;
-}
+  #defPage {
+    background-color: #F9E3AB;
+    color: #632612;
+  }
 
 </style>
