@@ -1,7 +1,7 @@
 <template>
   <quasar-layout>
-    <div slot="header" class="toolbar">
-      <quasar-toolbar-title :padding="1">
+    <div slot="header" class="toolbar bg-positive" >
+      <quasar-toolbar-title :padding="1" class="text-center">
         Provactive Problem Solver
       </quasar-toolbar-title>
     </div>
@@ -78,5 +78,17 @@ export default {
 </script>
 
 <style >
+.instruction {
+  text-align: center
+}
 
+.wordStyle {
+  border-bottom: 1px solid;
+  width: 90%;
+  margin-bottom: .5rem;
+}
+
+h3 {
+  align-content: center;
+}
 </style>
