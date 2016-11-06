@@ -42,6 +42,7 @@ export default new VueRouter({
         { path: '/twoAlphas', component: load('wordlists/twoAlphas') },
         { path: '/twoEchos', component: load('wordlists/twoEchos') },
         { path: '/twoIndias', component: load('wordlists/twoIndias') },
+        { path: '/twoLetters', component: load('wordlists/twoLetters') },
         { path: '/twoOctobers', component: load('wordlists/twoOctobers') },
         { path: '/twoUnicorns', component: load('wordlists/twoUnicorns') },
         { path: '/twoYankees', component: load('wordlists/twoYankees') },

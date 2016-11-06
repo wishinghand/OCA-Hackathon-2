@@ -38,7 +38,6 @@ export default {
       if (endOfWord === '(S)') {
         word = word.slice(0, -3)
       }
-
       var that = this
       var config = {
         headers: {
@@ -55,6 +54,7 @@ export default {
         console.log(response)
         that.definition = response.data.definitions[0].definition
         that.returnedWord = response.data.word
+        that.returnedWord = that.returnedWord.charAt(0).toUpperCase() + that.returnedWord.slice(1)
       })
       .catch(function (error) {
         console.log(error)
