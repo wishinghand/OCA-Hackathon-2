@@ -2,7 +2,7 @@
 <div>
   <ul>
     <li v-for="word in wordList">
-      {{word.word}} - <span @click="$refs.basicModal.open()">Definition</span>
+      {{word.word}} - <span @click="openModal(word.word)">Definition</span>
     </li>
   </ul>
 
@@ -10,10 +10,9 @@
   <quasar-modal
     ref="basicModal"
     class="maximized"
-    @open="getDefinition(this)"
   >
-    <h3>{{word}} Definition</h3>
-    {{definition}}
+    <h3>{{returnedWord}} Definition</h3>
+    <p>{{definition}}</p>
     <button class="primary" @click="$refs.basicModal.close()">Close</button>
   </quasar-modal>
 </div>
@@ -24,18 +23,35 @@ export default {
   data () {
     return {
       wordList: '',
-      modalOpen: false,
+      returnedWord: '',
       definition: ''
     }
   },
 
   methods: {
+    openModal (word) {
+      this.$refs.basicModal.open()
+      this.getDefinition(word)
+    },
     getDefinition (word) {
       var that = this
+      var config = {
+        headers: {
+          'X-Mashape-Key': 'Kikv2nFc5omsh2drxrkb4WTVObfGp132j70jsnSdDT5BS8A4eV',
+          'Accept': 'application/json',
+          'Content-Type': 'text/plain',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+        }
+      }
 
-      this.$http.get('https://wordsapiv1.p.mashape.com/words/%7Bword%7D/definitions')
+      this.$http.get('https://wordsapiv1.p.mashape.com/words/' + word + '/definitions', config)
       .then(function (response) {
-        that.definition = response.definitions[0].definition
+        console.log(response)
+        that.definition = response.data.definitions[0].definition
+      })
+      .catch(function (error) {
+        console.log(error)
       })
     }
   },
