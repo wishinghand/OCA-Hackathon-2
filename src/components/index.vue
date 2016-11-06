@@ -98,9 +98,4 @@ export default {
     padding: 1.5rem;
   }
 
-  #defPage {
-    background-color: #F9E3AB;
-    color: #632612;
-  }
-
 </style>
