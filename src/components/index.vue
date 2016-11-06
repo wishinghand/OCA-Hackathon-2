@@ -12,7 +12,7 @@
       </quasar-tab>
 
       <quasar-tab route="/noVowels">
-          V
+          No Vwls
       </quasar-tab>
 
       <quasar-tab route="/qNoU">
@@ -24,7 +24,7 @@
       </quasar-tab>
 
       <quasar-tab route="/threeLetters">
-          LLL
+          3 Ltrs
       </quasar-tab>
 
       <quasar-tab route="/twoAlphas">
@@ -40,7 +40,7 @@
       </quasar-tab>
 
       <quasar-tab route="/twoLetters">
-          LL
+          2 Ltrs
       </quasar-tab>
 
       <quasar-tab route="/twoOctobers">
@@ -63,14 +63,8 @@
           Z
       </quasar-tab>
     </quasar-tabs>
-    <!--
-      Replace following "div" with
-      "<router-view class="layout-view">" component
-      if using subRoutes
-    -->
     <!-- <div class="layout-view"></div> -->
-
-    <router-view class="layout-view"></router-view>
+    <router-view class="layout-view" ></router-view>
   </quasar-layout>
 </template>
 
@@ -79,12 +73,6 @@ export default {
   data () {
     return {
     }
-  },
-  computed: {
-  },
-  methods: {
-  },
-  mounted () {
   }
 }
 </script>
