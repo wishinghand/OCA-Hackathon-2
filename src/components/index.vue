@@ -2,79 +2,106 @@
   <quasar-layout>
     <div slot="header" class="toolbar">
       <quasar-toolbar-title :padding="1">
-        Quasar Framework v{{quasarVersion}}
+        Provactive Problem Solver
       </quasar-toolbar-title>
     </div>
 
+    <quasar-tabs slot="navigation"> 
+      <quasar-tab
+        route="/juliet" exact @click="testing();">
+          J
+      </quasar-tab>
+
+      <quasar-tab
+        route="/noVowels" exact>
+          V
+      </quasar-tab>
+
+      <quasar-tab
+        route="/qNoU">
+          U
+      </quasar-tab>
+
+      <quasar-tab
+        route="/quebec">
+          Q
+      </quasar-tab>
+
+      <quasar-tab
+        route="/threeLetters">
+          LLL
+      </quasar-tab>
+
+      <quasar-tab
+        route="/twoAlphas">
+          AA
+      </quasar-tab>
+
+      <quasar-tab
+        route="/twoEchos">
+          EE
+      </quasar-tab>
+
+      <quasar-tab 
+        route="/twoIndias">
+          II
+      </quasar-tab>
+
+      <quasar-tab  
+        route="/twoLetters">
+          LL
+      </quasar-tab>
+
+      <quasar-tab 
+        route="/twoOctobers">
+          OO
+      </quasar-tab>
+
+      <quasar-tab 
+        route="/twoUnicorns">
+          UU
+      </quasar-tab>
+
+      <quasar-tab 
+        route="/twoYankees">
+          YY
+      </quasar-tab>
+
+      <quasar-tab  
+        route="/xray">
+          X
+      </quasar-tab>
+
+      <quasar-tab  
+        route="/zebra">
+          Z
+      </quasar-tab>
+    </quasar-tabs>
     <!--
       Replace following "div" with
       "<router-view class="layout-view">" component
       if using subRoutes
     -->
-    <div class="layout-view">
-      <div class="logo-container non-selectable no-pointer-events">
-        <div class="logo" :style="position">
-          <img src="~assets/quasar-logo.png">
-          <p class="caption text-center">
-            <span class="desktop-only">Move your mouse.</span>
-            <span class="touch-only">Touch screen and move.</span>
-          </p>
-        </div>
-      </div>
-    </div>
+  <!--   <div class="layout-view">
+    </div> -->
+    <router-view class="layout-view"></router-view>
   </quasar-layout>
 </template>
 
 <script>
-var moveForce = 30
-var rotateForce = 40
-
-import Quasar, { Utils } from 'quasar'
-
 export default {
   data () {
     return {
-      quasarVersion: Quasar.version,
-      moveX: 0,
-      moveY: 0,
-      rotateY: 0,
-      rotateX: 0
     }
   },
   computed: {
-    position () {
-      let transform = `rotateX(${this.rotateX}deg) rotateY(${this.rotateY}deg)`
-      return {
-        top: this.moveY + 'px',
-        left: this.moveX + 'px',
-        '-webkit-transform': transform,
-        '-ms-transform': transform,
-        transform
-      }
-    }
   },
   methods: {
-    move (event) {
-      const {width, height} = Utils.dom.viewport()
-      const {top, left} = Utils.event.position(event)
-      const halfH = height / 2
-      const halfW = width / 2
-
-      this.moveX = (left - halfW) / halfW * -moveForce
-      this.moveY = (top - halfH) / halfH * -moveForce
-      this.rotateY = (left / width * rotateForce * 2) - rotateForce
-      this.rotateX = -((top / height * rotateForce * 2) - rotateForce)
+    testing () {
+      console.log('blah')
     }
   },
   mounted () {
-    this.$nextTick(() => {
-      document.addEventListener('mousemove', this.move)
-      document.addEventListener('touchmove', this.move)
-    })
-  },
-  beforeDestroy () {
-    document.removeEventListener('mousemove', this.move)
-    document.removeEventListener('touchmove', this.move)
   }
 }
 </script>

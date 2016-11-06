@@ -12,18 +12,18 @@
 export default {
   data () {
     return {
-      wordList: '';
+      wordList: ''
     }
   },
-  mounted() {
-    axios.get('../../statics/quebec.json')
+  mounted () {
+    this.$http.get('../../statics/quebec.json')
     .then(function (response) {
-      console.log(response);
-      this.wordList = response.body;
+      console.log(response)
+      this.wordList = response.body
     })
     .catch(function (error) {
-      console.log(error);
-    });
+      console.log(error)
+    })
   }
 }
 </script>

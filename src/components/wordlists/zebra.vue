@@ -12,18 +12,18 @@
 export default {
   data () {
     return {
-      wordList: '';
+      wordList: ''
     }
   },
-  mounted() {
-    axios.get('../../statics/zebra.json')
+  mounted () {
+    this.$http.get('../../statics/zebra.json')
     .then(function (response) {
-      console.log(response);
-      this.wordList = response.body;
+      console.log(response)
+      this.wordList = response.body
     })
     .catch(function (error) {
-      console.log(error);
-    });
+      console.log(error)
+    })
   }
 }
 </script>
