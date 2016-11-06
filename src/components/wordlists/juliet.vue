@@ -16,7 +16,9 @@
   >
 
     <h4 class="text-center">Definition of <b>{{returnedWord}}</b></h4>
-    <p class="defText">{{definition}}</p>
+    <p class="defText" v-html="definition">
+      <!-- {{definition}} -->
+    </p>
     <button class="round closeBtn" @click="$refs.basicModal.close()">Close</button>
 
   </quasar-modal>
@@ -61,6 +63,7 @@ export default {
 
       this.$http.get('https://wordsapiv1.p.mashape.com/words/' + word + '/definitions', config)
       .then(function (response) {
+        console.log(response.data)
         if (response.data.definitions.length === 0) {
           that.returnedWord = response.data.word
           that.returnedWord = that.returnedWord.charAt(0).toUpperCase() + that.returnedWord.slice(1)
@@ -71,7 +74,7 @@ export default {
           that.returnedWord = that.returnedWord.charAt(0).toUpperCase() + that.returnedWord.slice(1)
           // that.definition = response.data.definitions[0].definition
           for (var i = 0; i < response.data.definitions.length; i++) {
-            that.definition += response.data.definitions[i].definition
+            that.definition += (i + 1) + '. ' + response.data.definitions[i].definition + '<br />'
           }
         }
       })
