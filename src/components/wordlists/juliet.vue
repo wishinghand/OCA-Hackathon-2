@@ -17,7 +17,7 @@
 
     <h4 class="text-center">Definition of <b>{{returnedWord}}</b></h4>
     <p class="defText">{{definition}}</p>
-    <button class="round closeBtn" @click="$refs.basicModal.close()"> Close </button>
+    <button class="round closeBtn" @click="$refs.basicModal.close()">Close</button>
 
   </quasar-modal>
 </div>
@@ -35,6 +35,9 @@ export default {
 
   methods: {
     openModal (word) {
+      // clears modal when opening a new page
+      this.returnedWord = ''
+      this.definition = ''
       this.$refs.basicModal.open()
       this.getDefinition(word)
     },
