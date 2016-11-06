@@ -28,6 +28,18 @@ export default {
       definition: ''
     }
   },
+
+  methods: {
+    getDefinition (word) {
+      var that = this
+
+      this.$http.get('https://wordsapiv1.p.mashape.com/words/%7Bword%7D/definitions')
+      .then(function (response) {
+        that.definition = response.definitions[0].definition
+      })
+    }
+  },
+
   mounted () {
     var that = this
 
