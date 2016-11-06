@@ -39,11 +39,13 @@ export default {
       this.getDefinition(word)
     },
     getDefinition (word) {
+      var that = this
       var endOfWord = word.slice(-3)
+
       if (endOfWord === '(S)') {
         word = word.slice(0, -3)
       }
-      var that = this
+
       var config = {
         headers: {
           'X-Mashape-Key': 'Kikv2nFc5omsh2drxrkb4WTVObfGp132j70jsnSdDT5BS8A4eV',
@@ -56,10 +58,19 @@ export default {
 
       this.$http.get('https://wordsapiv1.p.mashape.com/words/' + word + '/definitions', config)
       .then(function (response) {
-        console.log(response)
-        that.definition = response.data.definitions[0].definition
-        that.returnedWord = response.data.word
-        that.returnedWord = that.returnedWord.charAt(0).toUpperCase() + that.returnedWord.slice(1)
+        if (response.data.definitions.length === 0) {
+          that.returnedWord = response.data.word
+          that.returnedWord = that.returnedWord.charAt(0).toUpperCase() + that.returnedWord.slice(1)
+          that.definition = 'We were unable to find the definition for that word.'
+        }
+        else {
+          that.returnedWord = response.data.word
+          that.returnedWord = that.returnedWord.charAt(0).toUpperCase() + that.returnedWord.slice(1)
+          // that.definition = response.data.definitions[0].definition
+          for (var i = 0; i < response.data.definitions.length; i++) {
+            that.definition += response.data.definitions[i].definition
+          }
+        }
       })
       .catch(function (error) {
         console.log(error)
