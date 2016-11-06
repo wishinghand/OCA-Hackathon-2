@@ -2,7 +2,7 @@
 <div>
   <ul>
     <li v-for="word in wordList">
-      {{word.word}} - <span @click="$refs.basicModal.open()">Definition</span>
+      {{word.word}} - <span @click="openModal(word.word)" :id="word.word">Definition</span>
     </li>
   </ul>
 
@@ -10,7 +10,7 @@
   <quasar-modal
     ref="basicModal"
     class="maximized"
-    @open="getDefinition(this)"
+    @open="getDefinition()"
   >
     <h3>{{word}} Definition</h3>
     {{definition}}
@@ -30,12 +30,19 @@ export default {
   },
 
   methods: {
+    openModal (word) {
+      this.$refs.basicModal.open()
+      this.getDefinition(word)
+    },
     getDefinition (word) {
       var that = this
 
-      this.$http.get('https://wordsapiv1.p.mashape.com/words/%7Bword%7D/definitions')
+      this.$http.get('https://wordsapiv1.p.mashape.com/words/' + word + '/definitions')
       .then(function (response) {
         that.definition = response.definitions[0].definition
+      })
+      .catch(function (error) {
+        console.log(error)
       })
     }
   },

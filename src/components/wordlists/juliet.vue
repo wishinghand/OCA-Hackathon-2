@@ -1,9 +1,8 @@
 <template>
 <div>
-J
   <ul>
-    <li v-for="(word, index) in wordList">
-      {{word[index].word}}
+    <li v-for="word in wordList">
+      {{word.word}}
     </li>
   </ul>
 </div>
@@ -21,7 +20,6 @@ export default {
 
     this.$http.get('../../statics/juliet.json')
     .then(function (response) {
-      console.log(response.data)
       that.wordList = response.data
     })
     .catch(function (error) {

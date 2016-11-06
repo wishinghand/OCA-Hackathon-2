@@ -20,7 +20,6 @@ export default {
 
     this.$http.get('../../statics/twoLetters.json')
     .then(function (response) {
-      console.log(response.data)
       that.wordList = response.data
     })
     .catch(function (error) {
