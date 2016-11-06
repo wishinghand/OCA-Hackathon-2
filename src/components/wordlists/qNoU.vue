@@ -34,6 +34,11 @@ export default {
       this.getDefinition(word)
     },
     getDefinition (word) {
+      var endOfWord = word.slice(-3)
+      if (endOfWord === '(S)') {
+        word = word.slice(0, -3)
+      }
+
       var that = this
       var config = {
         headers: {
@@ -49,9 +54,7 @@ export default {
       .then(function (response) {
         console.log(response)
         that.definition = response.data.definitions[0].definition
-      })
-      .catch(function (error) {
-        console.log(error)
+        that.returnedWord = response.data.word
       })
       .catch(function (error) {
         console.log(error)
