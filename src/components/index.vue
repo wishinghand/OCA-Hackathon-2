@@ -1,12 +1,12 @@
 <template>
   <quasar-layout>
-    <div slot="header" class="toolbar bg-positive" >
-      <quasar-toolbar-title :padding="1" class="text-center">
-        Provactive Problem Solver
+    <div slot="header" class="toolbar bg-amber-2" >
+      <quasar-toolbar-title :padding="1" class="text-center text-brown-10">
+        Provocative Problem Solver
       </quasar-toolbar-title>
     </div>
 
-    <quasar-tabs slot="navigation">
+    <quasar-tabs slot="navigation" class="bg-brown-10">
       <quasar-tab route="/juliet">
           J
       </quasar-tab>
@@ -77,18 +77,30 @@ export default {
 }
 </script>
 
-<style >
+<style>
+
+li {
+  list-style: none;
+}
+
 .instruction {
-  text-align: center
+  text-align: center;
+  font-style: italic;
 }
 
 .wordStyle {
-  border-bottom: 1px solid;
-  width: 90%;
+  width: 66%;
   margin-bottom: .5rem;
+  padding: .25rem;
 }
 
-h3 {
-  align-content: center;
+.defText {
+  padding: 1rem;
 }
+
+#defPage {
+  background-color: #F9E3AB;
+  color: #632612;
+}
+
 </style>

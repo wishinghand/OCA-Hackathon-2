@@ -13,9 +13,9 @@
     class="minimize"
     :content-css="{minWidth: '90vw', minHeight: '50vh'}"
   >
-    <h3>{{returnedWord}} Definition</h3>
-    <p>{{definition}}</p>
-    <button class="primary" @click="$refs.basicModal.close()">Close</button>
+    <h3 class="text-center">{{returnedWord}} Definition</h3>
+    <p class="defText">{{definition}}</p>
+    <button class="primary round" @click="$refs.basicModal.close()">Close</button>
   </quasar-modal>
 </div>
 </template>
