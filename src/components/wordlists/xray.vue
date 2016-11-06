@@ -16,10 +16,12 @@ export default {
     }
   },
   mounted () {
+    var that = this
+
     this.$http.get('../../statics/xray.json')
     .then(function (response) {
-      console.log(response)
-      this.wordList = response.body
+      console.log(response.data)
+      that.wordList = response.data
     })
     .catch(function (error) {
       console.log(error)

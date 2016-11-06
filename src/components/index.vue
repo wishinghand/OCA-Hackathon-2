@@ -6,74 +6,60 @@
       </quasar-toolbar-title>
     </div>
 
-    <quasar-tabs slot="navigation"> 
-      <quasar-tab
-        route="/juliet" exact @click="testing();">
+    <quasar-tabs slot="navigation">
+      <quasar-tab route="/juliet">
           J
       </quasar-tab>
 
-      <quasar-tab
-        route="/noVowels" exact>
+      <quasar-tab route="/noVowels">
           V
       </quasar-tab>
 
-      <quasar-tab
-        route="/qNoU">
-          U
+      <quasar-tab route="/qNoU">
+          qNoU
       </quasar-tab>
 
-      <quasar-tab
-        route="/quebec">
+      <quasar-tab route="/quebec">
           Q
       </quasar-tab>
 
-      <quasar-tab
-        route="/threeLetters">
+      <quasar-tab route="/threeLetters">
           LLL
       </quasar-tab>
 
-      <quasar-tab
-        route="/twoAlphas">
+      <quasar-tab route="/twoAlphas">
           AA
       </quasar-tab>
 
-      <quasar-tab
-        route="/twoEchos">
+      <quasar-tab route="/twoEchos">
           EE
       </quasar-tab>
 
-      <quasar-tab 
-        route="/twoIndias">
+      <quasar-tab route="/twoIndias">
           II
       </quasar-tab>
 
-      <quasar-tab  
-        route="/twoLetters">
+      <quasar-tab route="/twoLetters">
           LL
       </quasar-tab>
 
-      <quasar-tab 
-        route="/twoOctobers">
+      <quasar-tab route="/twoOctobers">
           OO
       </quasar-tab>
 
-      <quasar-tab 
-        route="/twoUnicorns">
+      <quasar-tab route="/twoUnicorns">
           UU
       </quasar-tab>
 
-      <quasar-tab 
-        route="/twoYankees">
+      <quasar-tab route="/twoYankees">
           YY
       </quasar-tab>
 
-      <quasar-tab  
-        route="/xray">
+      <quasar-tab route="/xray">
           X
       </quasar-tab>
 
-      <quasar-tab  
-        route="/zebra">
+      <quasar-tab route="/zebra">
           Z
       </quasar-tab>
     </quasar-tabs>
@@ -82,8 +68,8 @@
       "<router-view class="layout-view">" component
       if using subRoutes
     -->
-  <!--   <div class="layout-view">
-    </div> -->
+    <!-- <div class="layout-view"></div> -->
+
     <router-view class="layout-view"></router-view>
   </quasar-layout>
 </template>
@@ -97,25 +83,12 @@ export default {
   computed: {
   },
   methods: {
-    testing () {
-      console.log('blah')
-    }
   },
   mounted () {
   }
 }
 </script>
 
-<style lang="styl">
-.logo-container
-  width 192px
-  height 268px
-  perspective 800px
-  position absolute
-  top 50%
-  left 50%
-  transform translateX(-50%) translateY(-50%)
-.logo
-  position absolute
-  transform-style preserve-3d
+<style >
+
 </style>

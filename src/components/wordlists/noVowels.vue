@@ -1,5 +1,6 @@
 <template>
 <div>
+no vowels
   <ul>
     <li v-for="word in wordList">
       {{word.word}}
@@ -16,10 +17,12 @@ export default {
     }
   },
   mounted () {
+    var that = this
+
     this.$http.get('../../statics/noVowels.json')
     .then(function (response) {
-      console.log(response)
-      this.wordList = response.body
+      console.log(response.data)
+      that.wordList = response.data
     })
     .catch(function (error) {
       console.log(error)
