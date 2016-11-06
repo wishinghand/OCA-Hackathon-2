@@ -1,15 +1,17 @@
 <template>
-<div>
+<div><br>
+<p class="instruction">click on a word to see its meaning!</p>
   <ul>
-    <li v-for="word in wordList">
-      {{word.word}} - <span @click="openModal(word.word)">Definition</span>
+    <li v-for="word in wordList" class="wordStyle">
+      <span @click="openModal(word.word)">{{word.word}}</span>
     </li>
   </ul>
 
   <!-- this shows the definition of the word when clicked on -->
   <quasar-modal
     ref="basicModal"
-    class="maximized"
+    class="minimize"
+    :content-css="{minWidth: '90vw', minHeight: '50vh'}"
   >
     <h3>{{returnedWord}} Definition</h3>
     <p>{{definition}}</p>
