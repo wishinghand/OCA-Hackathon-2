@@ -2,12 +2,18 @@
 <div>
   <ul>
     <li v-for="word in wordList">
-      {{word.word}} - <a href="#" @click="modalOpen = !modalOpen">Definition</a>
+      {{word.word}} - <span @click="$refs.basicModal.open()">Definition</span>
     </li>
   </ul>
 
-  <quasar-modal ref="basicModal" class="minimized" v-show="modalOpen">
-    <h2>Basic Modal</h2>
+  <!-- this shows the definition of the word when clicked on -->
+  <quasar-modal
+    ref="basicModal"
+    class="maximized"
+    @open="getDefinition(this)"
+  >
+    <h3>{{word}} Definition</h3>
+    {{definition}}
     <button class="primary" @click="$refs.basicModal.close()">Close</button>
   </quasar-modal>
 </div>
@@ -18,7 +24,8 @@ export default {
   data () {
     return {
       wordList: '',
-      modalOpen: false
+      modalOpen: false,
+      definition: ''
     }
   },
   mounted () {
