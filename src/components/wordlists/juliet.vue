@@ -1,7 +1,7 @@
 <template>
 <div>
   <ul>
-    <li v-for="word in words">
+    <li v-for="word in wordList">
       {{word.word}}
     </li>
   </ul>
@@ -9,19 +9,25 @@
 </template>
 
 <script>
-import global from '../../scripts/global'
 export default {
   data () {
     return {
-      words: null
+      wordList: '';
     }
   },
-  created () {
-    global.getWords('juliet')
+  mounted() {
+    axios.get('../../statics/juliet.json')
+    .then(function (response) {
+      console.log(response);
+      this.wordList = response.body;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 }
 </script>
 
-<style lang="scss">
+<style>
 
 </style>

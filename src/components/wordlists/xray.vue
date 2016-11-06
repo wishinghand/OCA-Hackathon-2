@@ -1,6 +1,10 @@
 <template>
 <div>
-  
+  <ul>
+    <li v-for="word in wordList">
+      {{word.word}}
+    </li>
+  </ul>
 </div>
 </template>
 
@@ -8,13 +12,22 @@
 export default {
   data () {
     return {
+      wordList: '';
     }
   },
-  ready () {
+  mounted() {
+    axios.get('../../statics/xray.json')
+    .then(function (response) {
+      console.log(response);
+      this.wordList = response.body;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 }
 </script>
 
-<style lang="scss">
+<style>
 
 </style>
