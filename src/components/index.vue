@@ -12,19 +12,23 @@
       </quasar-tab>
 
       <quasar-tab route="/noVowels">
-          No Vwls
+          No Vowels
       </quasar-tab>
 
       <quasar-tab route="/qNoU">
-          qNoU
+          Q no U
       </quasar-tab>
 
       <quasar-tab route="/quebec">
           Q
       </quasar-tab>
 
+      <quasar-tab route="/twoLetters">
+          2 Letters
+      </quasar-tab>
+
       <quasar-tab route="/threeLetters">
-          3 Ltrs
+          3 Letters
       </quasar-tab>
 
       <quasar-tab route="/twoAlphas">
@@ -37,10 +41,6 @@
 
       <quasar-tab route="/twoIndias">
           II
-      </quasar-tab>
-
-      <quasar-tab route="/twoLetters">
-          2 Ltrs
       </quasar-tab>
 
       <quasar-tab route="/twoOctobers">

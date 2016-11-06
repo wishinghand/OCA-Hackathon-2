@@ -3,7 +3,7 @@
 <p class="instruction">click on a word to see its meaning!</p>
   <ul>
     <li v-for="word in wordList" class="wordStyle">
-      <span @click="openModal(word.word)">{{word.word}}</span>
+      {{word.word}} - <span @click="openModal(word.word)">Definition</span>
     </li>
   </ul>
 
@@ -13,7 +13,7 @@
     class="minimize"
     :content-css="{minWidth: '90vw', minHeight: '50vh'}"
   >
-    <h3>{{returnedWord}} Definition</h3>
+    <h4>{{returnedWord}} Definition</h4>
     <p>{{definition}}</p>
     <button class="primary" @click="$refs.basicModal.close()">Close</button>
   </quasar-modal>
@@ -79,6 +79,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
