@@ -7,63 +7,63 @@
     </div>
 
     <quasar-tabs slot="navigation" class="bg-brown-10">
-      <quasar-tab route="/juliet">
+      <quasar-tab route="/wordlist/juliet">
           J
       </quasar-tab>
 
-      <quasar-tab route="/noVowels">
-          No Vowels
-      </quasar-tab>
-
-      <quasar-tab route="/qNoU">
-          Q no U
-      </quasar-tab>
-
-      <quasar-tab route="/quebec">
+      <quasar-tab route="/wordlist/quebec">
           Q
       </quasar-tab>
 
-      <quasar-tab route="/xray">
+      <quasar-tab route="/wordlist/qNoU">
+          Q no U
+      </quasar-tab>
+
+      <quasar-tab route="/wordlist/xray">
           X
       </quasar-tab>
 
-      <quasar-tab route="/zebra">
+      <quasar-tab route="/wordlist/zebra">
           Z
       </quasar-tab>
 
-      <quasar-tab route="/twoLetters">
+      <quasar-tab route="/wordlist/noVowels">
+        No Vowels
+      </quasar-tab>
+
+      <quasar-tab route="/wordlist/twoLetters">
           2 Letters
       </quasar-tab>
 
-      <quasar-tab route="/threeLetters">
+      <quasar-tab route="/wordlist/threeLetters">
           3 Letters
       </quasar-tab>
 
-      <quasar-tab route="/twoAlphas">
+      <quasar-tab route="/wordlist/twoAlphas">
           AA
       </quasar-tab>
 
-      <quasar-tab route="/twoEchos">
+      <quasar-tab route="/wordlist/twoEchos">
           EE
       </quasar-tab>
 
-      <quasar-tab route="/twoIndias">
+      <quasar-tab route="/wordlist/twoIndias">
           II
       </quasar-tab>
 
-      <quasar-tab route="/twoOctobers">
+      <quasar-tab route="/wordlist/twoOctobers">
           OO
       </quasar-tab>
 
-      <quasar-tab route="/twoUnicorns">
+      <quasar-tab route="/wordlist/twoUnicorns">
           UU
       </quasar-tab>
 
-      <quasar-tab route="/twoYankees">
+      <quasar-tab route="/wordlist/twoYankees">
           YY
       </quasar-tab>
     </quasar-tabs>
-    <!-- <div class="layout-view"></div> -->
+
     <router-view class="layout-view" ></router-view>
   </quasar-layout>
 </template>
@@ -72,6 +72,7 @@
 export default {
   data () {
     return {
+      selectedList: ''
     }
   }
 }

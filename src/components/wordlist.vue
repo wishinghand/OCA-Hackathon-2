@@ -36,6 +36,17 @@ export default {
   },
 
   methods: {
+    getWords () {
+      var that = this
+
+      this.$http.get('../../statics/' + this.$route.params.wordtype + '.json')
+      .then(function (response) {
+        that.wordList = response.data
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+    },
     openModal (word) {
       // clears modal when opening a new page
       this.returnedWord = ''
@@ -63,6 +74,7 @@ export default {
 
       this.$http.get('https://wordsapiv1.p.mashape.com/words/' + word + '/definitions', config)
       .then(function (response) {
+        console.log(response)
         if (response.data.definitions.length === 0) {
           that.returnedWord = response.data.word
           that.returnedWord = that.returnedWord.charAt(0).toUpperCase() + that.returnedWord.slice(1)
@@ -82,18 +94,13 @@ export default {
       })
     }
   },
-
+  watch: {
+    '$route' () {
+      this.getWords()
+    }
+  },
   mounted () {
-    var that = this
-
-    this.$http.get('../../statics/juliet.json')
-    .then(function (response) {
-      // console.log(response.data)
-      that.wordList = response.data
-    })
-    .catch(function (error) {
-      console.log(error)
-    })
+    this.getWords()
   }
 }
 </script>
@@ -105,7 +112,6 @@ export default {
 
   .closeBtn {
     margin-left: 8rem;
-    margin-bottom: 2rem;
     background-color: #632612;
     color: #9ed1fe;
   }

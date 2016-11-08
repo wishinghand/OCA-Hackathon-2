@@ -34,20 +34,7 @@ export default new VueRouter({
   routes: [
     { path: '/', component: load('index'),
       children: [
-        { path: '/juliet', component: load('wordlists/juliet') },
-        { path: '/noVowels', component: load('wordlists/noVowels') },
-        { path: '/qNoU', component: load('wordlists/qNoU') },
-        { path: '/quebec', component: load('wordlists/quebec') },
-        { path: '/threeLetters', component: load('wordlists/threeLetters') },
-        { path: '/twoAlphas', component: load('wordlists/twoAlphas') },
-        { path: '/twoEchos', component: load('wordlists/twoEchos') },
-        { path: '/twoIndias', component: load('wordlists/twoIndias') },
-        { path: '/twoLetters', component: load('wordlists/twoLetters') },
-        { path: '/twoOctobers', component: load('wordlists/twoOctobers') },
-        { path: '/twoUnicorns', component: load('wordlists/twoUnicorns') },
-        { path: '/twoYankees', component: load('wordlists/twoYankees') },
-        { path: '/xray', component: load('wordlists/xray') },
-        { path: '/zebra', component: load('wordlists/zebra') }
+        { path: '/wordlist/:wordtype', component: load('wordlist') }
       ]
     }, // Default
     { path: '*', component: load('error404') } // Not found
