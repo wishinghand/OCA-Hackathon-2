@@ -1,6 +1,6 @@
 <template>
 <div><br>
-<p class="instruction">click on a word to see its meaning!</p>
+<p class="instruction">Click on a word to see its meaning</p>
   <ul>
     <li v-for="word in wordList" class="wordStyle">
       <span @click="openModal(word.word)">{{word.word}}</span>
@@ -63,11 +63,10 @@ export default {
 
       this.$http.get('https://wordsapiv1.p.mashape.com/words/' + word + '/definitions', config)
       .then(function (response) {
-        console.log(response.data)
         if (response.data.definitions.length === 0) {
           that.returnedWord = response.data.word
           that.returnedWord = that.returnedWord.charAt(0).toUpperCase() + that.returnedWord.slice(1)
-          that.definition = 'We were unable to find the definition for that word.'
+          that.definition = 'We were unable to find the definition for ' + that.returnedWord + '.'
         }
         else {
           that.returnedWord = response.data.word
@@ -106,6 +105,7 @@ export default {
 
   .closeBtn {
     margin-left: 8rem;
+    margin-bottom: 2rem;
     background-color: #632612;
     color: #9ed1fe;
   }

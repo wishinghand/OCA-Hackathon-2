@@ -2,7 +2,7 @@
   <quasar-layout>
     <div slot="header" class="toolbar bg-amber-2" >
       <quasar-toolbar-title :padding="1" class="text-center text-brown-10">
-        Provocative Problem Solver
+        Nth - A Provocative Problem Solver
       </quasar-toolbar-title>
     </div>
 
@@ -21,6 +21,14 @@
 
       <quasar-tab route="/quebec">
           Q
+      </quasar-tab>
+
+      <quasar-tab route="/xray">
+          X
+      </quasar-tab>
+
+      <quasar-tab route="/zebra">
+          Z
       </quasar-tab>
 
       <quasar-tab route="/twoLetters">
@@ -53,14 +61,6 @@
 
       <quasar-tab route="/twoYankees">
           YY
-      </quasar-tab>
-
-      <quasar-tab route="/xray">
-          X
-      </quasar-tab>
-
-      <quasar-tab route="/zebra">
-          Z
       </quasar-tab>
     </quasar-tabs>
     <!-- <div class="layout-view"></div> -->

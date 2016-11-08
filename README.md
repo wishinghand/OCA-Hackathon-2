@@ -1,10 +1,10 @@
-# Quasar App
+# Nth
 
-> A Quasar project
+> A Quasar project for those hard-to-remember Scrabble words
 
 ## Build Setup
 
-``` bash
+```
 # install dependencies
 npm install
 
@@ -13,13 +13,4 @@ quasar dev
 
 # build for production with minification
 quasar build
-
-# run unit tests
-quasar test --unit
-
-# run e2e tests
-quasar test --e2e
-
-# run all tests
-quasar test
 ```
