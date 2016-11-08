@@ -32,7 +32,11 @@ export default new VueRouter({
    */
 
   routes: [
-    { path: '/', component: load('index') }, // Default
+    { path: '/', component: load('index'),
+      children: [
+      { path: '/wordlist/:wordtype', component: load('wordlist') }
+      ]
+    }, // Default
     { path: '*', component: load('error404') } // Not found
   ]
 })

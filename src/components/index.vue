@@ -7,74 +7,69 @@
     </div>
 
     <quasar-tabs slot="navigation">
-      <quasar-tab @click="selectedList = juliet">
+      <quasar-tab route="/wordlist/juliet">
           J
       </quasar-tab>
 
-      <quasar-tab @click="selectedList = noVowels">
-          No Vwls
+      <quasar-tab route="/wordlist/noVowels">
+          No Vowels
       </quasar-tab>
 
-      <quasar-tab @click="selectedList = qNoU">
-          qNoU
-      </quasar-tab>
-
-      <quasar-tab @click="selectedList = quebec">
+      <quasar-tab route="/wordlist/quebec">
           Q
       </quasar-tab>
 
-      <quasar-tab @click="selectedList = threeLetters">
-          3 Ltrs
+      <quasar-tab route="/wordlist/qNoU">
+          Q no U
       </quasar-tab>
 
-      <quasar-tab @click="selectedList = twoAlphas">
-          AA
-      </quasar-tab>
-
-      <quasar-tab @click="selectedList = twoEchos">
-          EE
-      </quasar-tab>
-
-      <quasar-tab @click="selectedList = twoIndias">
-          II
-      </quasar-tab>
-
-      <quasar-tab @click="selectedList = twoLetters">
-          2 Ltrs
-      </quasar-tab>
-
-      <quasar-tab @click="selectedList = twoOctobers">
-          OO
-      </quasar-tab>
-
-      <quasar-tab @click="selectedList = twoUnicorns">
-          UU
-      </quasar-tab>
-
-      <quasar-tab @click="selectedList = twoYankees">
-          YY
-      </quasar-tab>
-
-      <quasar-tab @click="selectedList = xray">
+      <quasar-tab route="/wordlist/xray">
           X
       </quasar-tab>
 
-      <quasar-tab @click="selectedList = zebra">
+      <quasar-tab route="/wordlist/zebra">
           Z
       </quasar-tab>
+
+      <quasar-tab route="/wordlist/twoLetters">
+          2 Letters
+      </quasar-tab>
+
+      <quasar-tab route="/wordlist/threeLetters">
+          3 Letters
+      </quasar-tab>
+
+      <quasar-tab route="/wordlist/twoAlphas">
+          AA
+      </quasar-tab>
+
+      <quasar-tab route="/wordlist/twoEchos">
+          EE
+      </quasar-tab>
+
+      <quasar-tab route="/wordlist/twoIndias">
+          II
+      </quasar-tab>
+
+      <quasar-tab route="/wordlist/twoOctobers">
+          OO
+      </quasar-tab>
+
+      <quasar-tab route="/wordlist/twoUnicorns">
+          UU
+      </quasar-tab>
+
+      <quasar-tab route="/wordlist/twoYankees">
+          YY
+      </quasar-tab>
     </quasar-tabs>
-    <!-- <div class="layout-view"></div> -->
-    <word-list :selectedList="selectedList"></word-list>
+
+    <router-view class="layout-view" ></router-view>
   </quasar-layout>
 </template>
 
 <script>
-import wordList from './wordlist'
-
 export default {
-  components: {
-    wordList
-  },
   data () {
     return {
       selectedList: ''
